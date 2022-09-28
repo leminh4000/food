@@ -1,4 +1,40 @@
 
 
-GET https://api.yelp.com/v3/businesses/search
+GET https://api.yelp.com/v3/businesses/search?location='san jose'&term='pasta'
+Authorization: Bearer UjwtCsXGQR00YAAH5YAjvWKOrfaH15n4oMPNwNowfNg1GzQlqtnT6qER7-Cr2C270RBV-TKt3JdLreDGPOeNMjLpLh03hhQb1ONwIRWFgz7Qc8diibxB1XuUjtwyY3Yx
+################################
+
+
+POST http://localhost:3000/tracts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMwNTlkZWIyMzk2NTI2NWIwNTc4ZWEiLCJpYXQiOjE2NjQxMjA4MDR9.Y83k_UPiiJdssVRfBoGGHuCu9HcuTcUN_Czf_NNGhdY
+Content-Type: application/json
+
+{
+  "name": "My new tract",
+  "locations": [
+    {
+      "timestamp": 1000000000,
+      "coords": {
+        "latitude": 100,
+        "longitude": 100,
+        "altitude": 100,
+        "accuracy": 100,
+        "speed": 100
+      }
+    }
+  ]
+}
+
+<> 2022-09-26T101116.200.json
+
+###
+
+GET http://localhost:3000/tracts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMwNTlkZWIyMzk2NTI2NWIwNTc4ZWEiLCJpYXQiOjE2NjQxMjA4MDR9.Y83k_UPiiJdssVRfBoGGHuCu9HcuTcUN_Czf_NNGhdY
+Content-Type: application/json
+
+<> 2022-09-26T100843.200.json
+
+
+###
 
