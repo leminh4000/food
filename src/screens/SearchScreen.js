@@ -20,14 +20,17 @@ const SearchScreen = () => {
                        onTermSubmit={() => searchApi(term)}/>
             {errorMessage ?
                 <Text style={{color: 'red'}}>{errorMessage}</Text> : null}
-            <Text>We have found {results.length} results</Text>
+            {/*<Text>We have found {results.length} results</Text>*/}
             <ScrollView>
-                <ResultsList results={filterResultsByPrice('$$')}
-                             title="Cost Effective"/>
-                <ResultsList results={filterResultsByPrice('$')}
-                             title="Bit Pricer"/>
-                <ResultsList results={filterResultsByPrice('$$$')}
-                             title="Big Spender"/>
+                {filterResultsByPrice('$').length === 0 ? null :
+                    <ResultsList results={filterResultsByPrice('$')}
+                                 title="Cost Effective"/>}
+                {filterResultsByPrice('$$').length === 0 ? null :
+                    <ResultsList results={filterResultsByPrice('$$')}
+                                 title="Bit Pricer"/>}
+                {filterResultsByPrice('$$$').length === 0 ? null :
+                    <ResultsList results={filterResultsByPrice('$$$')}
+                                 title="Big Spender"/>}
             </ScrollView>
         </>
     );
